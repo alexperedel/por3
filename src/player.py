@@ -6,6 +6,9 @@ class Player:
         self._player_name = player_name
         self._score = score
 
+    def __lt__(self, other):
+        return self.score < other.score
+
     @property
     def uid(self):
         return self._unique_id

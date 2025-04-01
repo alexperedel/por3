@@ -111,7 +111,16 @@ def test_players_can_be_compared_by_score(self):
 Run the test and confirm that your error resembles the previous error
 
 ```text
-INSERT ERROR OUTPUT HERE
+Ran 1 test in 0.008s
+
+FAILED (errors=1)
+
+Error
+Traceback (most recent call last):
+  File "C:\Users\PEREDA\source\repos\por3\tests\test_player.py", line 26, in test_players_can_be_compared_by_score
+    self.assertTrue(bob < alice, True)
+                    ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'Player' and 'Player'
 ```
 
 Implement the appropriate magic method in the Player class and ensure you pass this test (and only this test!).
