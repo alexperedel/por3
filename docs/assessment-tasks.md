@@ -239,7 +239,14 @@ Using the code above as a starting point, create a test case to test your custom
 Include your test case below:
 
 ```python
+      def test_successfully_sorting_players_at_scale(self):
+        players = [Player(f"Player {i:03}", f"{i}", score=random.randint(0, 1000)) for i in range(1000)]
 
+        correctly_sorted_players = sorted(players, reverse=True)
+
+        custom_algorithm_sorted_players = Player.quick_sort(players)
+
+        self.assertListEqual(custom_algorithm_sorted_players, correctly_sorted_players)
 ```
 
 #### 5.3.2. Success criteria
@@ -299,7 +306,7 @@ Propose a fix to your sorting algorithm that fixes this issue.
 Complete the following snippet before you submit:
 
 ```text
-I, <name and student number>, completed this work in class <room number>, on <date>, under the supervision of <assessor's name>.
+I, Aleksandr Peredelskii 20129072, completed this work in class 306, on 01/04/25, under the supervision of Raf.
 ```
 
 Or (if not completed in class):
