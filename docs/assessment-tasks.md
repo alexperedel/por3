@@ -183,8 +183,8 @@ def sort_quickly(arr):
 
 What is the expected time and space complexity of the above algorithm? You can answer using big O or in plain English but in both cases you MUST justify your answer.
 
-> Answer here
-
+> The expected time complexity is O(nlog n) because every time we separate array into 2 parts which is log(n) and we have to get every number in the array which is n times. It uses pivot for these purposes and recursion (calling itself until arr <= 1). We create a lot of new lists so the space complexity will raise up quickly as it's shown on the image.
+![space-complexity.png](../img/space-complexity.png)
 ### 5.2. Task: Implement the custom sorting algorithm
 
 #### 5.2.1. Create a new method in the Player class
@@ -198,7 +198,20 @@ Add a separate test case to `test_player.py` to test your custom sorting algorit
 Include your code below:
 
 ```python
-# YOUR CUSTOM Sorting here
+    @classmethod
+    def quick_sort(cls, arr):
+        if len(arr) <= 1:
+            return arr
+
+        pivot = arr[0]
+        left = []
+        right = []
+        for x in arr[1:]:
+            if pivot < x:
+                left.append(x)
+            else:
+                right.append(x)
+        return cls.quick_sort(left) + [pivot] + cls.quick_sort(right)
 ```
 
 #### 5.2.3. Success criteria

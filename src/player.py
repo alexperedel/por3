@@ -30,5 +30,20 @@ class Player:
             raise ValueError("Score must be a positive number!")
         self._score = new_score
 
+    @classmethod
+    def quick_sort(cls, arr):
+        if len(arr) <= 1:
+            return arr
+
+        pivot = arr[0]
+        left = []
+        right = []
+        for x in arr[1:]:
+            if pivot < x:
+                left.append(x)
+            else:
+                right.append(x)
+        return cls.quick_sort(left) + [pivot] + cls.quick_sort(right)
+
     def __str__(self):
         return f"Player {self._player_name} (ID: {self._unique_id})"
