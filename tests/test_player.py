@@ -23,4 +23,5 @@ class TestPlayer(unittest.TestCase):
         bob = Player('02', "Bob",  score=5)
 
         # Add the appropriate expression to the following assert test
-        self.assertTrue(bob < alice, True)
+        self.assertTrue(bob < alice)
+        

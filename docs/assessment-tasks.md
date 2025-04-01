@@ -138,12 +138,17 @@ Implement the appropriate magic method in the Player class and ensure you pass t
 Rerun `test_sort_players` does the test pass? If not, include the output below:
 
 ```text
-Your output here
+Failure
+Traceback (most recent call last):
+  File "C:\Users\PEREDA\source\repos\por3\tests\test_player.py", line 18, in test_sort_players
+    self.assertListEqual(sorted_players, manually_sorted_players)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<src[33 chars]A152CF0550>, <src.player.Player object at 0x00[61 chars]690>] != [<src[33 chars]A152C5B820>, <src.player.Player object at 0x00[61 chars]010>]
 ```
 
 Why did the test fail (note: if it doesn't fail, it means there is something you have already done before you were asked to - you need to figure out what that is!)?
 
-> Answer here
+> We have to tell Python how to compare objects by adding __ eq __
 
 Add the necessary code to the Player class to ensure that the `test_sort_players` test passes.
 
