@@ -71,7 +71,15 @@ def test_sort_players(self):
 What was the outcome of running the above unit test, copy paste the output **for just this particular test** below:
 
 ```text
-Your output here
+Ran 1 test in 0.029s
+
+FAILED (errors=1)
+
+Error
+Traceback (most recent call last):
+  File "C:\Users\PEREDA\source\repos\por3\tests\test_player.py", line 12, in test_sort_players
+    sorted_players = sorted(players)
+TypeError: '<' not supported between instances of 'Player' and 'Player'
 ```
 
 ### 4.3. Success criteria
@@ -84,7 +92,7 @@ Your output here
 
 The tests checks that calling sorted on a list of players will sort them by score, what is the **only** magic method that must be implemented in the player class for the `sorted` function to succeed?
 
-> Answer Here
+> Method less than: "__ lt __"
 
 #### 4.3.2. Task: Implement the magic method in the Player class
 
@@ -192,8 +200,7 @@ The senior developer is impressed with your work and asks you to test your custo
 
 ```python
 import random
-from player import Player
-
+from src.player import Player
 
 players = [Player(f"Player {i}", uid=f"{i:03}", score=random.randint(0, 1000)) for i in range(1000)]
 ```
