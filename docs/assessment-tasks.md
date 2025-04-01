@@ -259,14 +259,14 @@ Create a test case that tries to sort 1000 players that are already sorted.
 If you get a failure, include the failure below:
 
 ```text
-YOUR FAILURE HERE
+RecursionError: maximum recursion depth exceeded
 ```
 
 Provide a reason why this test failed (if you got recursion errors, you need to explain **why** they occurred).
 
 If your implementation did not fail, you must explain what changes you made to the original algorithm given by the senior developer to ensure that it did not fail.
 
-> Answer here
+> It failed because the stack has a limited space. The danger of recursion is that it fulfills the stack quickly if the huge array was passed. In conclusion, it happened because there were too many calls and the stack was overfilled.
 
 Propose a fix to your sorting algorithm that fixes this issue.
 

@@ -47,3 +47,15 @@ class TestPlayer(unittest.TestCase):
         custom_algorithm_sorted_players = Player.quick_sort(players)
 
         self.assertListEqual(custom_algorithm_sorted_players, correctly_sorted_players)
+
+    def test_successfully_sorting_players_at_scale_sorted_list(self):
+        players = [Player(f"Player {i:03}", f"{i}", score=random.randint(0, 1000)) for i in range(1000)]
+
+        correctly_sorted_players = sorted(players, reverse=True)
+
+        custom_algorithm_sorted_players = Player.quick_sort(correctly_sorted_players)
+
+        print(*custom_algorithm_sorted_players)
+        print(*correctly_sorted_players)
+
+        self.assertListEqual(custom_algorithm_sorted_players, correctly_sorted_players)
