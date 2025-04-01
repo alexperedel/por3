@@ -46,4 +46,4 @@ class Player:
         return cls.quick_sort(left) + [pivot] + cls.quick_sort(right)
 
     def __str__(self):
-        return f"Player {self._player_name} (ID: {self._unique_id})"
+        return f"Player {self._player_name} (ID: {self._unique_id}) score: {self._score}"

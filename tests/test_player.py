@@ -1,4 +1,5 @@
 import unittest
+import random
 
 from src.player import Player
 
@@ -37,3 +38,12 @@ class TestPlayer(unittest.TestCase):
         sorted_players = Player.quick_sort(players)
 
         self.assertListEqual(sorted_players, manually_sorted_players)
+
+    def test_successfully_sorting_players_at_scale(self):
+        players = [Player(f"Player {i:03}", f"{i}", score=random.randint(0, 1000)) for i in range(1000)]
+
+        correctly_sorted_players = sorted(players, reverse=True)
+
+        custom_algorithm_sorted_players = Player.quick_sort(players)
+
+        self.assertListEqual(custom_algorithm_sorted_players, correctly_sorted_players)
