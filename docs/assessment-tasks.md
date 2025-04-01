@@ -271,8 +271,22 @@ If your implementation did not fail, you must explain what changes you made to t
 Propose a fix to your sorting algorithm that fixes this issue.
 
 ```python
-# YOUR FIX HERE
-# Highlight what the fix was
+    @classmethod
+    def quick_sort(cls, arr):
+        if len(arr) <= 1:
+            return arr
+
+        'pivot = arr[len(arr)//2]'  
+        'new_arr = arr[:]'
+        'del new_arr[len(arr)//2]'
+        left = []
+        right = []
+        'for x in new_arr:'
+            if pivot < x:
+                left.append(x)
+            else:
+                right.append(x)
+        return cls.quick_sort(left) + [pivot] + cls.quick_sort(right)
 ```
 
 #### 5.3.5. Success criteria

@@ -36,10 +36,11 @@ class Player:
             return arr
 
         pivot = arr[len(arr)//2]
-        arr.pop(pivot)
+        new_arr = arr[:]
+        del new_arr[len(arr)//2]
         left = []
         right = []
-        for x in arr:
+        for x in new_arr:
             if pivot < x:
                 left.append(x)
             else:
