@@ -23,4 +23,3 @@ class PlayerBNode:
     @left.setter
     def left(self, value):
         self._left = value
-        
