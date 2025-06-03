@@ -52,3 +52,32 @@ class PlayerBST:
             else:
                 return self._search_recursively(current_node.right, name)
 
+    def balance_bst(self):
+        bst_elements_list = []
+        self._bst_convertor_to_list(bst_elements_list, self._root)
+
+        bst_elements_list.sort(key=lambda player: player.name)
+
+        self._root = self._build_balanced_bst(bst_elements_list)
+
+    def _build_balanced_bst(self, players):
+        if not players:
+            return None
+
+        mid = len(players) // 2
+        current_node = PlayerBNode(players[mid])
+
+        current_node.left = self._build_balanced_bst(players[:mid])
+        current_node.right = self._build_balanced_bst(players[mid + 1:])
+
+        return current_node
+
+    def _bst_convertor_to_list(self, bst_elements_list, current_node):
+        if current_node is None:
+            return
+        bst_elements_list.append(current_node.player)
+        self._bst_convertor_to_list(bst_elements_list, current_node.left)
+        self._bst_convertor_to_list(bst_elements_list, current_node.right)
+
+
+
